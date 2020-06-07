@@ -1,0 +1,124 @@
+<html>
+<head>
+    <title>Statistik Transportasi Darat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"> 
+
+    
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
+</head>
+<body>
+    
+    <script>
+        $('#dropdown').hover(function() {
+          $(this).AddClass('open');
+        })
+    </script>
+    <script>
+        (function($){
+            $(document).ready(function(){
+                $('ul.dropdown-menu [data-toggle=dropdown]').on('mouseover', function(event) {
+                    event.preventDefault(); 
+                    event.stopPropagation(); 
+                    $(this).parent().siblings().removeClass('open');
+                    $(this).parent().toggleClass('open');
+                });
+            });
+        })(jQuery);
+    </script>
+    <nav class="navbar navbar-inverse navbar-static-top marginBottom-0" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+          
+          <a class="navbar-brand" href="/main.html">Statistik Transportasi Darat</a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                
+                <li class="dropdown hoves"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Statistik<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Panjang Jalan</a> 
+                            <ul class="dropdown-menu">
+                                <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kondisi Jalan</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/examples/map-pies/index.htm">Jalan Negara</a></li>
+                                        <li><a href="/examples/map-pies/kj_pjp.html">Jalan Provinsi</a></li>
+                                        <li><a href="/examples/map-pies/kj_pjk.html">Jalan Kab/Kota</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Jenis Permukaan</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/examples/map-pies/data3.html">Jalan Negara</a></li>
+                                        <li><a href="/examples/map-pies/data2.html">Jalan Provinsi</a></li>
+                                        <li><a href="/examples/map-pies/jp_pjk.html">Jalan Kab/Kota</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kendaraan</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/examples/map-pies/kendaraan.html">Kendaraan Bermotor</a></li>
+                                <li><a href="/examples/map-pies/kecelakaan.html">Kecelakaan Lalu Lintas</a></li>
+                                <li><a href="/examples/map-pies/sim.html">Surat Izin Mengemudi</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kereta Api</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/examples/map-pies/kereta.htm">Angkutan Penumpang</a></li>
+                                <li><a href="/examples/map-pies/kereta2.html">Angkutan Barang</a></li>
+                                <li><a href="/examples/map-pies/commuter.html">Commuter</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a></li>
+                
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+
+ <!--ABOUT PAGE -->
+ <div class="bgimg w3-container w3-content w3-center w3-padding-64" style="max-width:800px" >
+    
+    <h2 class="w3-wide">VISUALISASI DATA</h2>
+    <p class="w3-opacity"><b>Statistik Transportasi Darat Indonesia</b></p>
+    <p class="w3-justify">Situs Visualisasi Data Statistik Transportasi Darat Indonesia.  
+        Situs ini bertujuan untuk menyajikan kepada publik berbagai informasi yang terkait dengan Statistik Transportasi Darat di Indonesia.
+        Semua data yang divisualisasikan pada situs ini bersumber dari situs <a href="https://www.bps.go.id/" target="_blank"><b>Badan Pusat Statistik</b></a>.
+        Statistik Transportasi Darat Indonesia menyajikan 3 hal utama yaitu
+    </p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p>Statistik Panjang Jalan</p>
+        <img src="/roadmap.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Statistik Kendaraan</p>
+        <img src="/vehicle2.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Statistik Kereta Api</p>
+        <img src="/train.png" class="w3-round" alt="Random Name" style="width:60%">
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

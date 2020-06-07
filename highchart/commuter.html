@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+	<head>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Statistik Transportasi Darat</title>
+        
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"> 
+
+
+		<style type="text/css">
+#container {
+    height: 500px; 
+}
+
+#container2{
+    height: 250px;
+}
+
+.highcharts-figure, .highcharts-data-table table {
+    min-width: 310px; 
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #EBEBEB;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+		</style>
+	</head>
+	<body>
+        <script>
+            $('#dropdown').hover(function() {
+              $(this).AddClass('open');
+            })
+        </script>
+        <script>
+            (function($){
+                $(document).ready(function(){
+                    $('ul.dropdown-menu [data-toggle=dropdown]').on('mouseover', function(event) {
+                        event.preventDefault(); 
+                        event.stopPropagation(); 
+                        $(this).parent().siblings().removeClass('open');
+                        $(this).parent().toggleClass('open');
+                    });
+                });
+            })(jQuery);
+        </script>
+        <nav class="navbar navbar-inverse navbar-static-top marginBottom-0" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              
+              <a class="navbar-brand" href="/main.html">Statistik Transportasi Darat</a>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    
+                    <li class="dropdown hoves"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Statistik<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Panjang Jalan</a> 
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kondisi Jalan</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/examples/map-pies/index.htm">Jalan Negara</a></li>
+                                            <li><a href="/examples/map-pies/kj_pjp.html">Jalan Provinsi</a></li>
+                                            <li><a href="/examples/map-pies/kj_pjk.html">Jalan Kab/Kota</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Jenis Permukaan</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/examples/map-pies/data3.html">Jalan Negara</a></li>
+                                            <li><a href="/examples/map-pies/data2.html">Jalan Provinsi</a></li>
+                                            <li><a href="/examples/map-pies/jp_pjk.html">Jalan Kab/Kota</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kendaraan</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/examples/map-pies/kendaraan.html">Kendaraan Bermotor</a></li>
+                                    <li><a href="/examples/map-pies/kecelakaan.html">Kecelakaan Lalu Lintas</a></li>
+                                    <li><a href="/examples/map-pies/sim.html">Surat Izin Mengemudi</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kereta Api</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/highchart/kereta.htm">Angkutan Penumpang</a></li>
+                                    <li><a href="/highchart/kereta2.html">Angkutan Barang</a></li>
+                                    <li><a href="/highchart/commuter.html">Commuter</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">About</a></li>
+                    
+    
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+
+        <script src="../../code/highcharts.js"></script>
+        <script src="../../code/modules/exporting.js"></script>
+        
+        <script src="../../code/modules/accessibility.js"></script>
+
+    <!--CONTAINER 1-->
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        
+    </p>
+</figure>
+		<script type="text/javascript">
+Highcharts.chart('container', {
+
+    title: {
+        text: 'Statistik Transportasi Darat Indonesia'
+    },
+
+    subtitle: {
+        text: 'Jumlah Penumpang Kereta Commuter Indonesia Menurut Jalur Utama'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Penumpang'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 2015 to 2018'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 2015
+        }
+    },
+
+    series: [{                
+        name: 'Bogor',
+        data: [179896383, 190831385, 198587736, 201109214]
+    }, {
+        name: 'Cikarang/Bekasi',
+        data: [34632238, 37849923, 45440228, 53227107]
+    }, {
+        name: 'Serpong',
+        data: [30612662, 35134830, 46923714, 54175209]
+    }, {
+        name: 'Tangerang',
+        data: [12388912, 16772629, 24902313, 27845708]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+        </script>
+        
+
+      
+
+
+	</body>
+</html>
