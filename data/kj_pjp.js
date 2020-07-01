@@ -87,7 +87,7 @@ var data = [
             ['Papua',638,618,937,169,2362]    
        
   ],
-		maxVotes = 0,
+	maxVotes = 0,
     grnColor = 'rgba(46,125,50,0.80)',
     bluColor = 'rgba(142,36,170,0.80)',
     yelColor = 'rgba(240,190,50,0.80)',
@@ -115,23 +115,19 @@ var chart = Highcharts.mapChart('container', {
 
     colorAxis: {
         dataClasses: [{
-            from: -1,
-            to: 0,
+            
             color: grnColor,
             name: 'Baik'
         }, {
-            from: 0,
-            to: 1,
+            
             color: bluColor,
             name: 'Sedang'
         }, {
-            from: 2,
-            to: 3,
+            
             name: 'Rusak',
             color: yelColor
         }, {
-            from: 3,
-            to: 4,
+            
             name: 'Rusak Berat',
             color: redColor
         }]
@@ -164,7 +160,7 @@ var chart = Highcharts.mapChart('container', {
     },
     
     series: [{
-        /*mapData: Highcharts.maps['countries/us/us-all'],*/
+        
         mapData: Highcharts.maps['countries/id/id-all'],
         data: data,
         name: '',
@@ -185,9 +181,7 @@ var chart = Highcharts.mapChart('container', {
                         ['Rusak', this.yelVotes, yelColor],
                         ['Rusak Berat', this.redVotes, redColor]
                     ],
-                    //.sort(function (a, b) {
-                    //    return b[1] - a[1]; // Sort tooltip by most votes
-                    //}), 
+                     
                     function (line) {
                         return '<span style="color:' + line[2] +
                             // Colorized bullet
@@ -221,30 +215,7 @@ var chart = Highcharts.mapChart('container', {
     ]
 });
 
-// When clicking legend items, also toggle connectors and pies
-Highcharts.each(chart.legend.allItems, function (item) {
-    var old = item.setVisible;
-    item.setVisible = function () {
-        var legendItem = this;
-        old.call(legendItem);
-        Highcharts.each(chart.series[0].points, function (point) {
-            if (chart.colorAxis[0].dataClasses[point.dataClass].name === legendItem.name) {
-                // Find this state's pie and set visibility
-                Highcharts.find(chart.series, function (item) {
-                    return item.name === point.id;
-                }).setVisible(legendItem.visible, false);
-                // Do the same for the connector point if it exists
-                var connector = Highcharts.find(chart.series[2].points, function (item) {
-                    return item.name === point.id;
-                });
-                if (connector) {
-                    connector.setVisible(legendItem.visible, false);
-                }
-            }
-        });
-        chart.redraw();
-    };
-});
+
 
 // Add the pies after chart load, optionally with offset and connectors
 Highcharts.each(chart.series[0].points, function (state) {
